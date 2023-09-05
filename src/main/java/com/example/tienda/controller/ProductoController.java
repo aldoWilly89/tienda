@@ -42,6 +42,7 @@ public class ProductoController {
 	public ResponseEntity<Producto> guardarProducto(@RequestBody Producto producto){
 		
 		try {
+			
 			Producto productoGuardado = productosService.guardarProducto(producto);
 			URI uri= ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 					.buildAndExpand(productoGuardado.getIdproducto()).toUri();
