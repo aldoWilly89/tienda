@@ -62,6 +62,7 @@ public class ProductoController {
 	public ResponseEntity<Producto> actualizarProducto(@PathVariable Long idproducto, @RequestBody Producto producto){
 		
 		try {
+			
 			Producto productoGuardado = productosService.actualizarProducto(idproducto, producto);
 			URI uri= ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 					.buildAndExpand(productoGuardado.getIdproducto()).toUri();
